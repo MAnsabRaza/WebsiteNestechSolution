@@ -1,0 +1,161 @@
+const MadePostAdTenantController = function () {
+    $('#postAd_residential_type').parent().hide();
+    $('#postAd_commercial_type').parent().hide();
+    $('#postAd_storey').parent().parent().hide();
+    $('#postAd_direction').parent().parent().hide();
+    $('#postAd_building_structure').parent().parent().hide();
+
+    // Type selection change handler
+    $('#postAd_type').change(function () {
+        var selectedType = $(this).val();
+
+        if (selectedType === 'residential') {
+            $('#postAd_residential_type').parent().show();
+            $('#postAd_commercial_type').parent().hide();
+            $('#postAd_direction').parent().parent().removeClass('col-8').addClass('col-8');
+            $('#postAd_building_structure').parent().parent().removeClass('col-8').addClass('col-8');
+            $('#postAd_storey').parent().parent().show();
+
+        } else if (selectedType === 'commercial') {
+            $('#postAd_residential_type').parent().hide();
+            $('#postAd_commercial_type').parent().show();
+            $('#postAd_storey').parent().parent().hide();
+            $('#postAd_direction').parent().parent().removeClass('col-8').addClass('col-8');
+            $('#postAd_building_structure').parent().parent().removeClass('col-8').addClass('col-8');
+        }
+    });
+
+    // Residential type change handler
+    $('#postAd_residential_type').change(function () {
+        if ($(this).val()) {
+            $('#postAd_storey').parent().parent().show();
+            $('#postAd_direction').parent().parent().show();
+            $('#postAd_building_structure').parent().parent().show();
+        }
+    });
+
+    // Commercial type change handler
+    $('#postAd_commercial_type').change(function () {
+        if ($(this).val()) {
+            $('#postAd_direction').parent().parent().show();
+            $('#postAd_building_structure').parent().parent().show();
+        }
+    });
+    const resetField = function () {
+        $('#postAd_manage_by').val('');
+        $('#postAd_for').val('');
+        $('#status').prop('checked', false);
+        $('#postAd_owner_name').val('');
+        $('#postAd_contact_number').val('');
+        $('#category_id').val('');
+        $('#postAd_type').val('');
+        $('#postAd_residential_type').val('');
+        $('#postAd_commercial_type').val('');
+        $('#postAd_storey').val('');
+        $('#postAd_direction').val('');
+        $('#postAd_building_structure').val('');
+        $('#postAd_address').val('');
+        $('#postAd_price').val('');
+        $('#postAd_advance_payment').val('');
+        $('#postAd_city').val('');
+        $('#postAd_description').val('');
+        // Clear image previews
+        $('#image-previews').empty();
+    }
+
+    const savePost = function (formData) {
+        $.ajax({
+            type: 'POST',
+            url: '/savePost',
+            data: formData,
+            dataType: 'JSON',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.success) {
+                    Toastify({
+                        text: response.message,
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        stopOnFocus: true,
+                        backgroundColor: "#4caf50",
+                    }).showToast();
+                    resetField();
+                    window.location.href = '/';
+                }
+            },
+            error: function (error) {
+                Toastify({
+                    text: error.responseJSON.message,
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: true,
+                    backgroundColor: "#f44336",
+                }).showToast();
+            }
+        });
+    }
+
+    const getSaveObj = function () {
+        const formData = new FormData();
+        if ($('#voucher_type').val() === 'edit') {
+            formData.append('id', $('#postAd_id').val());
+            const deleteImages = [];
+            $('.delete-image:checked').each(function () {
+                deleteImages.push($(this).val());
+            });
+            if (deleteImages.length > 0) {
+                formData.append('delete_images', deleteImages.join(','));
+            }
+        }
+
+        formData.append('current_date', $('#current_date').val());
+        formData.append('voucher_type', $('#voucher_type').val());
+        formData.append('status', 0);
+        formData.append('postAd_manage_by', $('#postAd_manage_by').val());
+        formData.append('postAd_for', $('#postAd_for').val());
+        formData.append('postAd_owner_name', $('#postAd_owner_name').val());
+        formData.append('postAd_contact_number', $('#postAd_contact_number').val());
+        formData.append('category_id', $('#category_id').val());
+        // formData.append('user_id', $('#user_id').val());
+        formData.append('postAd_type', $('#postAd_type').val());
+        formData.append('postAd_residential_type', $('#postAd_residential_type').val());
+        formData.append('postAd_commercial_type', $('#postAd_commercial_type').val());
+        formData.append('postAd_storey', $('#postAd_storey').val());
+        formData.append('postAd_direction', $('#postAd_direction').val());
+        formData.append('postAd_building_structure', $('#postAd_building_structure').val());
+        formData.append('postAd_address', $('#postAd_address').val());
+        formData.append('postAd_price', $('#postAd_price').val());
+        formData.append('advance_payment', $('#advance_payment').val());
+        formData.append('postAd_city', $('#postAd_city').val());
+        formData.append('postAd_description', $('#postAd_description').val());
+        console.log(formData);
+        return formData;
+    }
+
+
+
+    return {
+        init: function () {
+
+
+            $('#btnSave').on('click', function (e) {
+                e.preventDefault();
+                const post = getSaveObj();
+                savePost(post);
+            });
+
+            getMaxPostAdId();
+        }
+    }
+}
+
+const madePostAdTenant = new MadePostAdTenantController();
+madePostAdTenant.init();

@@ -1,0 +1,662 @@
+/* Additional styling for full-width hero section */
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+    --primary-color: #ed1537;
+    --bg-color: #ecf1f6;
+    --tertiary-color: #434243;
+    --quaternary-color: #282828;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensures it stays on top of other content */
+    background-color: #fff;
+    /* Set a background color to avoid transparency */
+
+}
+
+/* .navbar-collapse.collapse.show {
+    animation: slide-in 0.3s forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
+
+/* Black color for links and responsive margin adjustments */
+.navbar-nav .nav-link {
+    color: #5b5a5c !important;
+    font-weight: bold !important;
+    font-size: 15px !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+    /* Optional hover color */
+}
+
+
+
+.hero {
+    position: relative;
+    color: var(--bg-color);
+    /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: var(--tertiary-color);
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero .btn-outline-light {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 7px;
+}
+
+.hero .btn-outline-light:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-radius: 7px;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+.about {
+    font-weight: bold;
+    color: var(--tertiary-color);
+}
+
+.service {
+    font-weight: bold;
+    color: var(--tertiary-color);
+}
+
+.service-box {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.service-icon {
+    color: var(--tertiary-color);
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    height: 60px;
+    /* Adjusted height */
+    width: 60px;
+    /* Adjusted width */
+    display: inline-flex;
+    /* Ensure icon is centered */
+    justify-content: center;
+    align-items: center;
+}
+
+.service-text {
+    color: var(--tertiary-color);
+    font-weight: bold;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    background-color: red;
+}
+
+.service-box:hover .service-text {
+    color: white;
+    /* Change text color to white when hovering over the box */
+}
+
+.service-box:hover .service-icon {
+    background-color: var(--bg-color);
+    /* Keep the icon's background color unchanged */
+    color: var(--tertiary-color);
+    /* Keep the icon color unchanged */
+}
+
+#aboutSection .content-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Set a reduced max-height for the image */
+#aboutSection .img-container img {
+    object-fit: cover;
+    width: 100%;
+
+    /* Adjust this value to control image height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    #aboutSection .content-container {
+        flex-direction: column;
+    }
+
+    #aboutSection .img-container {
+        margin-top: 20px;
+    }
+}
+
+#serviceSection {
+    background-color: var(--bg-color);
+}
+
+#propertySection {
+    background-color: var(--bg-color);
+}
+
+.team {
+    font-weight: bold;
+    color: var(--bg-color);
+}
+
+#teamSection {
+    background-color: var(--tertiary-color) !important;
+}
+
+.box-hover {
+    border-radius: 10px !important;
+}
+
+.box-content {
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    background-color: #7dabdd;
+}
+
+/* Gallery Section Styling */
+#gallerysection {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.gallery {
+    font-weight: bold;
+    color: var(--tertiary-color);
+    /* You can adjust this color if needed */
+    font-size: 2rem;
+}
+
+.box {
+    margin-bottom: 15px;
+    /* Space between rows */
+}
+
+.box-content {
+    border-radius: 10px;
+    background-color: #7dabdd;
+    height: 100%;
+    /* Ensure the box stretches to fill the container */
+    width: 100%;
+    /* Ensure the box stretches to fill the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Adjust the box size at different breakpoints (already in your CSS) */
+
+/* Responsive Design */
+@media (max-width: 575px) {
+    .box-content {
+        height: 200px;
+        /* Adjust the height for small screens */
+        width: 100%;
+        /* Ensure the boxes take up full width */
+    }
+
+    .gallery {
+        font-size: 1.5rem;
+        /* Adjust font size for small screens */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .box-content {
+        height: 250px;
+        /* Adjust the height for medium screens */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .box-content {
+        height: 300px;
+        /* Adjust the height for tablets and smaller laptops */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .box-content {
+        height: 300px;
+        /* Adjust the height for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .box-content {
+        height: 300px;
+        /* Adjust the height for very large screens */
+    }
+}
+
+#contactSection {
+    padding: 40px 0;
+    background-color: var(--tertiary-color);
+}
+
+.contact {
+    font-weight: bold;
+    color: var(--bg-color);
+}
+
+.contact-box {
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.contact-box p,
+.contact-box a {
+    display: block;
+    word-wrap: break-word;
+}
+
+
+.icon-contact {
+    display: inline-block;
+    border-radius: 40%;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    font-size: 40px;
+    padding: 15px;
+}
+
+.contact-text {
+    color: var(--bg-color);
+}
+
+.footer {
+    background-color: var(--quaternary-color);
+}
+
+.footer-text {
+    color: var(--bg-color);
+}
+
+.footer-icon {
+    background-color: var(--bg-color);
+    color: var(--tertiary-color);
+    font-size: 25px;
+    padding: 15px;
+
+}
+
+/* Style for the team member container */
+.team-member {
+    position: relative;
+    overflow: hidden;
+    /* Hide any overflow if needed */
+    border-radius: 10px;
+    /* Rounded corners for the image container */
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    /* Image border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for the image */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect for image zoom */
+}
+
+/* Container for the text */
+.team-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark background for text */
+    color: #fff;
+    /* White text */
+    opacity: 0;
+    /* Text is hidden by default */
+    visibility: hidden;
+    /* Make sure text is hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Smooth transition for text */
+    text-align: center;
+}
+
+.team-member:hover .team-info {
+    opacity: 1;
+    /* Show the text when hovering over the image */
+    visibility: visible;
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+    /* Zoom the image slightly when hovered */
+}
+
+.team-name {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    /* Smooth animation for text */
+    color: var(--bg-color);
+}
+
+.team-skill {
+    font-size: 0.6rem;
+    transition: transform 0.3s ease;
+    color: var(--primary-color);
+    /* Smooth animation for text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .team-name {
+        font-size: 1rem;
+        /* Reduce text size for small screens */
+    }
+
+    .team-skill {
+        font-size: 0.9rem;
+        /* Reduce text size for small screens */
+    }
+}
+
+@media (min-width: 576px) {
+    .team-name {
+        font-size: 1.1rem;
+        /* Slightly larger text on small devices */
+    }
+
+    .team-skill {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .team-name {
+        font-size: 1.3rem;
+        /* Larger text on medium devices */
+    }
+
+    .team-skill {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .team-name {
+        font-size: 1.4rem;
+        /* Larger text on large devices */
+    }
+
+    .team-skill {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .team-name {
+        font-size: 1.5rem;
+        /* Larger text on extra-large devices */
+    }
+
+    .team-skill {
+        font-size: 1.3rem;
+    }
+}
+
+.btn-signIn {
+    background-color: var(--primary-color);
+}
+
+/* Model */
+.textModelService {
+    color: var(--primary-color);
+}
+
+/* Register */
+/* Ensure the input group is positioned relative */
+.input-group {
+    position: relative;
+}
+
+/* Position the eye icon inside the input field */
+.input-group-text {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    /* Adjust padding to match input size */
+    font-size: 1.2rem;
+    /* Adjust icon size */
+}
+
+/* Adjust font size for smaller devices */
+@media (max-width: 576px) {
+    .input-group-text {
+        font-size: 1rem;
+        /* Smaller icon on smaller screens */
+    }
+}
+
+.modeltext {
+    color: var(--primary-color);
+}
+
+#postAdd {
+    background-color: var(--bg-color);
+}
+
+.postAddHeading {
+    color: var(--primary-color);
+}
+
+.postAddSubHeading {
+    font-weight: bold;
+    color: var(--tertiary-color) !important;
+}
+
+.postAddCardOne {
+    background-color: #ffffff !important;
+}
+
+.postAddHeadingCardOne {
+    color: var(--tertiary-color) !important;
+}
+
+.whySellCard {
+    background-color: var(--bg-color) !important;
+}
+
+.whySellCard {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+.whySellCardCircle {
+    background-color: #ffffff !important;
+    color: var(--tertiary-color);
+    width: 110px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px !important;
+    /* Half of the circle height */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* Optional: if you want shadow on circle */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#sellPropertyQuickly {
+    background-color: var(--bg-color) !important;
+}
+
+.sellPropertyQuicklyCard {
+    background-color: #ffffff !important;
+}
+
+#categoryHome {
+    background-color: var(--bg-color) !important;
+}
+
+.iconColorSellPropertyQuickly {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active {
+    font-weight: bold !important;
+}
+
+.font {
+    font-size: 20px;
+}
+
+.category-text {
+    color: var(--tertiary-color);
+}
+
+.service-box:hover .category-text {
+    color: white;
+    /* Change text color to white when hovering over the box */
+}
+
+#propertyForSale {
+    background-color: var(--bg-color);
+}
+
+.threeStepToSell {
+    background-color: var(--bg-color) !important;
+    border: none !important;
+}
+
+.image-preview-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.image-preview-container .filename {
+    display: block;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.marked-for-deletion img {
+    opacity: 0.5;
+}
+
+.marked-for-deletion::after {
+    content: 'Will be deleted';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.image-preview-container button {
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview-container button i {
+    font-size: 12px;
+}
+
+.image-preview-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.modelPostAdSell {
+    font-size: 30px;
+}
+
+#serviceShowOrder {
+    background-color: var(--bg-color);
+}
+
+.feature-icon-container {
+    width: 60px;
+    height: 60px;
+}
+
+
+.search-btn {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.search-btn:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.deallerBenefits {
+    background-color: var(--bg-color) !important;
+}
+
+/* //service Navigation */
+/* Home Post */
