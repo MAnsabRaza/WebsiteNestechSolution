@@ -35,7 +35,7 @@ class CreatePostTable extends Migration
             $table->string('postAd_direction');
             $table->string('postAd_building_structure');
             $table->string('postAd_city');
-            $table->string('postAd_price');
+            $table->string('postAd_price')->nullable();
             $table->string('postAd_address');
             $table->string('advance_payment')->nullable();
             $table->longText('postAd_description');
