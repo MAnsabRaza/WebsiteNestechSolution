@@ -44,7 +44,7 @@
                             <div class="row mb-3">
                                 <div class="col-2"></div>
                                 <div class="col-2 text-end">
-                                    <label for="country" class="form-label fs-5 mt-2">Select Country</label>
+                                    <label for="country" class="form-label fs-5 mt-2">Country</label>
                                 </div>
                                 <div class="col-6">
                                     <select name="country" id="country" class="form-control form-control-lg">
@@ -56,7 +56,7 @@
                             <div class="row mb-3">
                                 <div class="col-2"></div>
                                 <div class="col-2 text-end">
-                                    <label for="contact_number" class="form-label fs-5 mt-2">Contact Number</label>
+                                    <label for="contact_number" class="form-label fs-5 mt-2">Phone</label>
                                 </div>
                                 <div class="col-6">
                                     <input type="text" class="form-control form-control-lg" id="contact_number"

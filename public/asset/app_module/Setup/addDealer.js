@@ -1,5 +1,8 @@
 let DealerController = function () {
     const saveDealer = function (formData) {
+        if (!validateSave()) {
+            return;
+        }
         $.ajax({
             type: 'POST',
             url: '/api/saveDealer',
@@ -72,6 +75,46 @@ let DealerController = function () {
         $('#dealer_image').val('');
         $('#status').prop('checked', false);
     };
+    const validateSave = function () {
+        const fields = {
+            'dealer_name': document.getElementById('dealer_name'),
+            'dealer_phone': document.getElementById('dealer_phone'),
+            'dealer_city': document.getElementById('dealer_city'),
+            'dealer_country': document.getElementById('dealer_country'),
+            'dealer_area': document.getElementById('dealer_area'),
+            'dealer_office_address': document.getElementById('dealer_office_address'),
+        };
+
+        let isValid = true;
+
+        // Reset all borders
+        Object.values(fields).forEach(field => {
+            field.style.border = '1px solid #ced4da';
+        });
+
+        // Check each field
+        Object.values(fields).forEach(field => {
+            if (!field.value.trim()) {
+                field.style.border = '2px solid #dc3545';
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            Toastify({
+                text: "Please fill in all fields",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                backgroundColor: "#f44336",
+            }).showToast();
+            return false;
+        }
+
+        return true;
+    }
 
     return {
         init: function () {

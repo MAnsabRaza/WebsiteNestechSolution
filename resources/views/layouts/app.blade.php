@@ -161,14 +161,14 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="d-flex">
+                    <div class="d-flex sm-mt-2">
                         @if (Auth::check())
                             <div class="dropdown">
                                 <a href="#" class="nav-link text-danger fw-bold ms-1 dropdown-toggle"
                                     id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->user_name }}
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0"
+                                <ul class="dropdown-menu dropdown-menu-sm-end shadow-sm border-0"
                                     aria-labelledby="userDropdown">
                                     <li>
                                         <h6 class="dropdown-header">Welcome {{ Auth::user()->user_name }}</h6>
@@ -176,19 +176,15 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
                                     <li><a class="dropdown-item" href="{{ route('userProfile') }}"><i
                                                 class="fas fa-user-circle me-2"></i>My Profile</a></li>
-
                                     <li><a class="dropdown-item" href="{{ route('myAds') }}"><i
                                                 class="fas fa-tachometer-alt me-2"></i>My Ads</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li>
-                                        <a href="{{ route('userLogout') }}" class="dropdown-item text-danger"><i
-                                                class="fas fa-sign-out-alt me-2"></i>Logout</a>
-                                    </li>
+                                    <li><a href="{{ route('userLogout') }}" class="dropdown-item text-danger"><i
+                                                class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
                                 </ul>
                             </div>
                         @else
@@ -196,6 +192,7 @@
                                 class="nav-link text-danger fw-bold ms-1 nav-close">Login</a>
                         @endif
                     </div>
+
                 </div>
             </div>
         </nav>
@@ -276,18 +273,15 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-12 my-3 my-md-0 d-flex justify-content-md-end justify-content-center">
-                        <a href="https://www.facebook.com/share/1Ev3cpyFRM/?mibextid=wwXIfr" target="_blank"
+                        <a href="http://Www.facebook.com/nestechmarketing" target="_blank"
                             class="text-decoration-none footer-icon rounded-circle text-center mx-2 d-flex align-items-center justify-content-center">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="#" target="_blank"
+                        <a href="http://Www.instagram.com/nestech_marketing" target="_blank"
                             class="text-decoration-none footer-icon rounded-circle text-center mx-2 d-flex align-items-center justify-content-center">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="#" target="_blank"
-                            class="text-decoration-none footer-icon rounded-circle text-center mx-2 d-flex align-items-center justify-content-center">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
+
                     </div>
                 </div>
                 <div class="row align-items-center">

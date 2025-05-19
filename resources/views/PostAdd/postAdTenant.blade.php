@@ -187,18 +187,17 @@
 
 
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-12 col-md-5 col-sm-12">
                                     <div class="alert alert-danger p-4 d-flex align-items-center" role="alert">
                                         <i class="bi bi-telephone-fill fs-1 me-3"></i>
                                         <div>
                                             <h5 class="mb-1">Contact us today to get started!</h5>
-                                            <a href="tel:+923006030789"
-                                                class="fs-4 fw-bold text-danger text-decoration-none">+92 300
-                                                6030 789</a>
+                                            <a href="tel:+923086638369"
+                                                class="fs-4 fw-bold text-danger text-decoration-none">+92 3086638369</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-12 col-md-7 col-sm-12">
                                     <img src="{{ asset('asset/image/Property rental service.png') }}" alt=""
                                         class="img-fluid">
                                 </div>

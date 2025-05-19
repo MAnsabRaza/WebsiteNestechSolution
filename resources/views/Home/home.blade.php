@@ -638,7 +638,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Managed By Nestech</h2>
+                        <h5 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Managed By Nestech</h5>
                         <a href="{{ route('showAllViewNestech') }}" class="view-all-link">View All Manage By Nestech</a>
                     </div>
                 </div>
@@ -904,7 +904,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Property For Sell</h2>
+                        <h5 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Property For Sell</h5>
                         <a href="{{ route('showAllViewUserSell') }}" class="view-all-link">View All Property For Sell</a>
                     </div>
                 </div>
@@ -966,7 +966,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Property For Rent</h2>
+                        <h5 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Property For Rent</h5>
                         <a href="{{ route('showAllViewUserRent') }}" class="view-all-link">View All Property For Sell</a>
                     </div>
                 </div>
@@ -1028,7 +1028,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Customer-Centric Properties</h2>
+                        <h5 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Customer-Centric Properties</h5>
                         <a href="{{ route('showAllViewUserBuy') }}" class="view-all-link">View All Customer-Centric
                             Properties</a>
                     </div>
@@ -1093,7 +1093,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Tenant-Focused Properties</h2>
+                        <h5 class="fw-bold" style="color: rgb(80, 75, 75) !important;">Tenant-Focused Properties</h5>
                         <a href="{{ route('showAllViewUserTenant') }}" class="view-all-link">View All Tenant-Focused
                             Properties
                         </a>

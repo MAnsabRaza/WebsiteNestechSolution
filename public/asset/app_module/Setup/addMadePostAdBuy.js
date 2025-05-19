@@ -64,6 +64,9 @@ const MadePostAdBuyController = function () {
     }
 
     const savePost = function (formData) {
+        if (!validateSave()) {
+            return;
+        }
         $.ajax({
             type: 'POST',
             url: '/savePost',
@@ -141,6 +144,48 @@ const MadePostAdBuyController = function () {
     }
 
 
+    const validateSave = function () {
+        const fields = {
+            'postAd_owner_name': document.getElementById('postAd_owner_name'),
+            'postAd_contact_number': document.getElementById('postAd_contact_number'),
+            'postAd_direction': document.getElementById('postAd_direction'),
+            'postAd_building_structure': document.getElementById('postAd_building_structure'),
+            'postAd_description': document.getElementById('postAd_description'),
+            'category_id': document.getElementById('category_id'),
+            'postAd_city': document.getElementById('postAd_city'),
+        };
+
+        let isValid = true;
+
+        // Reset all borders
+        Object.values(fields).forEach(field => {
+            field.style.border = '1px solid #ced4da';
+        });
+
+        // Check each field
+        Object.values(fields).forEach(field => {
+            if (!field.value.trim()) {
+                field.style.border = '2px solid #dc3545';
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            Toastify({
+                text: "Please fill in all fields",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                backgroundColor: "#f44336",
+            }).showToast();
+            return false;
+        }
+
+        return true;
+    }
+
 
     return {
         init: function () {
@@ -151,8 +196,6 @@ const MadePostAdBuyController = function () {
                 const post = getSaveObj();
                 savePost(post);
             });
-
-            getMaxPostAdId();
         }
     }
 }
